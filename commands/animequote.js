@@ -12,6 +12,6 @@ module.exports = {
     let result = `__**${quote.anime}**__\n`;
     result = `${result}**${quote.character}**\n`;
     result = `${result}${quote.quote}`;
-    msg.reply(result);
+    msg.channel.send(result);
   },
 };
