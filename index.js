@@ -4,7 +4,9 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const botCommands = require('./commands');
 
+let commands = '';
 Object.keys(botCommands).map((key) => {
+  commands = `${commands}**${botCommands[key].name}** - ${botCommands[key].description}\n`;
   bot.commands.set(botCommands[key].name, botCommands[key]);
 });
 
@@ -20,6 +22,10 @@ bot.on('message', (msg) => {
   const args = msg.content.split(/ +/);
   const command = args.shift().toLowerCase();
   console.info(`Called command: ${command}`);
+
+  if (command === 'help') {
+    msg.channel.send(commands);
+  }
 
   if (!bot.commands.has(command)) return;
 

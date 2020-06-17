@@ -5,7 +5,7 @@ const url = '/quotes/random';
 
 module.exports = {
   name: 'animequote',
-  description: 'Anime Quote',
+  description: 'Show random anime quote',
   async execute(msg, args) {
     const response = await axios({ method: 'get', url, baseURL });
     const quote = response.data[0];
