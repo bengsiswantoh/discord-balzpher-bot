@@ -1,3 +1,4 @@
 module.exports = {
-  ping: require("./ping"),
+  ping: require('./ping'),
+  animequote: require('./animequote'),
 };
