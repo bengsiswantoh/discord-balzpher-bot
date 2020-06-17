@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 bot.commands = new Discord.Collection();
 const botCommands = require('./commands');
 
-let commands = '**help** - Show command list';
+let commands = '**help** - Show command list\n';
 Object.keys(botCommands).map((key) => {
   commands = `${commands}**${botCommands[key].name}** - ${botCommands[key].description}\n`;
   bot.commands.set(botCommands[key].name, botCommands[key]);
