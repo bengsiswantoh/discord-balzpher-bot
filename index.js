@@ -10,9 +10,9 @@ Object.keys(botCommands).map((key) => {
   bot.commands.set(botCommands[key].name, botCommands[key]);
 });
 
-const TOKEN = process.env.TOKEN;
+const DISCORD_TOKEN = process.env.DISCORD_TOKEN;
 
-bot.login(TOKEN);
+bot.login(DISCORD_TOKEN);
 
 bot.on('ready', () => {
   console.info(`Logged in as ${bot.user.tag}!`);
