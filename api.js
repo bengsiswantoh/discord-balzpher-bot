@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
+const { getPrice } = require('./endpoints/yahoo.js');
+
+app.get('/', async (req, res) => res.send(await getPrice()));
 
 app.listen(port, () => console.log(`App started`));
