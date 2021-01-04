@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-const baseURL = 'https://anime-chan.herokuapp.com/api/';
+const baseURL = 'https://animechanapi.xyz/api/';
 const url = '/quotes/random';
 
 module.exports = {
