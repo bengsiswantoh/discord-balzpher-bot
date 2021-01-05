@@ -1,11 +1,10 @@
 const help = {
   name: 'help',
-  description: 'Show command list\n',
+  description: 'Show command list',
   execute(msg, args) {
-    let result;
+    let result = '';
     Object.keys(commands).map((key) => {
       result = `${result}**${commands[key].name}** - ${commands[key].description}\n`;
-      bot.commands.set(commands[key].name, commands[key]);
     });
     msg.channel.send(result);
   },
